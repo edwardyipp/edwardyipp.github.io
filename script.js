@@ -29,8 +29,12 @@ function getWeather(city, lat, lon) {
       document.getElementById('wind-description').textContent = getWindDescription(data.wind.speed);
 
       // Update UV index and description
-      document.getElementById('uv-index').textContent = getUVIndex(data.coord.lat, data.coord.lon);
-      document.getElementById('uv-description').textContent = getUVDescription(getUVIndex(data.coord.lat, data.coord.lon));
+      getUVIndex(data.coord.lat, data.coord.lon)
+        .then(uvIndex => {
+          document.getElementById('uv-index').textContent = uvIndex;
+          document.getElementById('uv-description').textContent = getUVDescription(uvIndex);
+        })
+        .catch(error => console.log(error));
 
       // Update rain value and description
       document.getElementById('rain-value').textContent = `${data.rain ? data.rain['1h'] : 0}%`;
@@ -53,13 +57,14 @@ function getWindDescription(speed) {
   }
 }
 
-// Update UV index and description
-getUVIndex(data.coord.lat, data.coord.lon)
-  .then(uvIndex => {
-    document.getElementById('uv-index').textContent = uvIndex;
-    document.getElementById('uv-description').textContent = getUVDescription(uvIndex);
-  })
-  .catch(error => console.log(error));
+function getUVIndex(lat, lon) {
+  const url = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+
+  return fetch(url)
+    .then(response => response.json())
+    .then(data => data.value)
+    .catch(error => console.log(error));
+}
 
 function getUVDescription(index) {
   if (index <= 2) {
