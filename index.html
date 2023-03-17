@@ -1,1 +1,48 @@
-<h1>Hello</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="weather-app">
+    <h1 class="title">Weather App</h1>
+    <div class="search-container">
+      <label for="location">Enter location:</label>
+      <input type="text" id="location" placeholder="e.g. London">
+      <button onclick="getWeather()">Get Weather</button>
+    </div>
+    <div class="weather-container">
+      <h2 id="city-name" class="city-name"></h2>
+      <div class="temperature-container">
+        <div class="temperature" id="temperature"></div>
+        <div class="weather-description" id="weather-description"></div>
+      </div>
+      <div class="additional-info">
+        <div class="info-block">
+          <div class="info-label">Feels Like:</div>
+          <div class="info-value" id="feel-like-temperature"></div>
+          <div class="info-value" id="feel-like-condition"></div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Wind:</div>
+          <div class="info-value" id="wind-speed"></div>
+          <div class="info-value" id="wind-description"></div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">UV Index:</div>
+          <div class="info-value" id="uv-index"></div>
+          <div class="info-value" id="uv-description"></div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Rain:</div>
+          <div class="info-value" id="rain-value"></div>
+          <div class="info-value" id="rain-description"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
