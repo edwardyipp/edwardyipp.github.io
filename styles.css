@@ -106,6 +106,14 @@ button[type="submit"] {
   color: #22b8cf;
 }
 
+body.bot {
+  background: linear-gradient(135deg, #080808 0%, #4b0082 100%);
+}
+
+video {
+  mix-blend-mode: lighten;
+}
+
 /* Dynamic background styles */
 body[data-background="new-york"] {
   background-color: #f6c289;

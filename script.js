@@ -90,12 +90,12 @@ function getBackgroundColor(cityName) {
       return '#e8b8d2';
     case 'tokyo':
       return '#a8d8ea';
-      case 'sydney':
-        return '#f5b8c8';
-        default:
-        return '#fff';
-        }
-        }
+    case 'sydney':
+      return '#f5b8c8';
+    default:
+      return '#fff';
+  }
+}
         
         // Ask for user's location and display weather information
         if (navigator.geolocation) {
