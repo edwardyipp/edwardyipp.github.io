@@ -1,0 +1,45 @@
+body.bot {
+  background: linear-gradient(-45deg, #4b0082, #160E35, #1B172D);
+	background-size: 500% 500%;
+	animation: gradient 8s ease infinite;
+
+  --button-line-height: 24px;
+  --padding-top-16: 16px;
+  --button-height: calc(var(--button-line-height) + var(--padding-top-16));
+}
+
+video {
+  mix-blend-mode: lighten;
+  width: 200px;
+  height: 200px;
+}
+
+.bot .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+button {
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 8px 24px;
+  border-radius: calc(var(--button-height) / 2);
+  height: var(--button-height);
+  border: none;
+}
+
+/* Background gradient animation */
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
