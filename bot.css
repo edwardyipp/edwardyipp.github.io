@@ -22,14 +22,39 @@ video {
   gap: 50px;
 }
 
-button {
+button span {
   font-size: 1em;
   line-height: 1.5;
-  padding: 8px 24px;
+  padding: 8px 20px;
   border-radius: calc(var(--button-height) / 2);
-  height: var(--button-height);
-  border: none;
+  border: 1px solid #000;
+  font-weight: 600;
+  color: #000;
+  position: relative;
+  background: #fff;
+  display: block;
+  bottom: 5px;
+  transition: bottom 0.2s ease-out;
 }
+
+button {
+  background: #000;
+  height: var(--button-height);
+  border-radius: calc(var(--button-height) / 2);
+  width: 100%;
+  border: none;
+  padding: 0;
+  position: relative;
+}
+
+button:hover span{
+  bottom: 5px;
+}
+
+button.clicked span {
+  animation: bottom 0.2s ease 1;
+}
+
 
 /* Background gradient animation */
 @keyframes gradient {
@@ -41,5 +66,18 @@ button {
 	}
 	100% {
 		background-position: 0% 50%;
+	}
+}
+
+/* Background gradient animation */
+@keyframes bottom {
+	0% {
+		bottom: 5px;
+	}
+	50% {
+		bottom: 0;
+	}
+	100% {
+		bottom: 5px;
 	}
 }
