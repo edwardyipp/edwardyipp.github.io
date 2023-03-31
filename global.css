@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
 
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Satoshi', sans-serif;
 }
 
 /* Global styles */
@@ -9,6 +8,10 @@
   --primary-color: #333;
   --secondary-color: #f7f7f7;
   --accent-color: #fff;
+
+  --button-line-height: 48px;
+  --padding-top-16: 16px;
+  --button-height: calc(var(--button-line-height) + var(--padding-top-16) + 2px);
 }
 
 body {
@@ -45,6 +48,40 @@ button[type="submit"] {
   border-radius: 0.25rem;
   font-size: 1rem;
   cursor: pointer;
+}
+
+a span {
+  font-size: 2em;
+  line-height: 1.5;
+  padding: 7px 20px;
+  border-radius: calc(var(--button-height) / 2);
+  border: 2px solid #000;
+  font-weight: 500;
+  color: #000;
+  position: relative;
+  background: #fff;
+  display: block;
+  bottom: 0;
+  transition: bottom 0.1s ease;
+  -webkit-box-sizing: border-box; /* Safari/Chrome */
+  -moz-box-sizing: border-box; /* Firefox */
+  box-sizing: border-box;
+}
+
+a {
+  background: black;
+  height: var(--button-height);
+  border-radius: calc(var(--button-height) / 2);
+  width: 100%;
+  border: none;
+  padding: 0;
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+
+a:hover span{
+  bottom: 8px;
 }
 
 /* Weather information styles */
